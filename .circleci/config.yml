@@ -13,14 +13,8 @@ workflows:
       - docker/publish:
           filters: *mbf
           image: "emanguy/rust-ci"
-          after_checkout:
-            - run:
-                name: Load dockerfile versions
-                command: source ./VERSIONS.txt
-            - run:
-                name: Set docker username
-                command: export DOCKER_LOGIN=emanguy
+          docker-username: CONTAINER_REPO_USERNAME
           docker-password: CONTAINER_REPO_PAT
           dockerfile: ./RustCI.dockerfile
           registry: ghcr.io
-          tag: $RustCI_VERSION
+          tag: $(source VERSIONS.txt && echo $RustCI_VERSION)
