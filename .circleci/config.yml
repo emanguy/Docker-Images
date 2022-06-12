@@ -13,7 +13,7 @@ workflows:
       - docker/publish:
           filters: *mbf
           context:
-            - "Github PAT"
+            - "GitHub PAT"
           image: "emanguy/rust-ci"
           docker-username: CONTAINER_REPO_USERNAME
           docker-password: CONTAINER_REPO_PAT
