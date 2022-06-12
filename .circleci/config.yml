@@ -8,9 +8,10 @@ master_branch_filter: &mbf
     only: /^main$/
 
 workflows:
-  build_rustci_image:
+  build_images:
     jobs:
       - docker/publish:
+          name: Build RustCI Image
           filters: *mbf
           context:
             - "GitHub PAT"
