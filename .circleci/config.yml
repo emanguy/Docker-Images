@@ -12,6 +12,8 @@ workflows:
     jobs:
       - docker/publish:
           filters: *mbf
+          context:
+            - "Github PAT"
           image: "emanguy/rust-ci"
           docker-username: CONTAINER_REPO_USERNAME
           docker-password: CONTAINER_REPO_PAT
