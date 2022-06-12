@@ -1,0 +1,26 @@
+version: 2.1
+
+orbs:
+  docker: circleci/docker@2
+
+master_branch_filter: &mbf
+  branches:
+    only: /^main$/
+
+workflows:
+  build_rustci_image:
+    jobs:
+      - docker/publish:
+          filters: *mbf
+          image: "emanguy/rust-ci"
+          after_checkout:
+            - run:
+                name: Load dockerfile versions
+                command: source ./VERSIONS.txt
+            - run:
+                name: Set docker username
+                command: export DOCKER_USERNAME=emanguy
+          docker-password: CONTAINER_REPO_PAT
+          dockerfile: ./RustCI.dockerfile
+          registry: ghcr.io
+          tag: $RustCI_VERSION
