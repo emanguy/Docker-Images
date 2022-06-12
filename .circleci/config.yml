@@ -19,7 +19,7 @@ workflows:
                 command: source ./VERSIONS.txt
             - run:
                 name: Set docker username
-                command: export DOCKER_USERNAME=emanguy
+                command: export DOCKER_LOGIN=emanguy
           docker-password: CONTAINER_REPO_PAT
           dockerfile: ./RustCI.dockerfile
           registry: ghcr.io
