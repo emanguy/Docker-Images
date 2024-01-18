@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  docker: circleci/docker@2.1.1
+  docker: circleci/docker@2.5.0
 
 master_branch_filter: &mbf
   branches:
