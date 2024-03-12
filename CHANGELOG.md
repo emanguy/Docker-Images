@@ -1,5 +1,8 @@
 # RustCI
 
+## Version 1.75-v1.1.0
+- Adds clippy and rustfmt inside the container
+
 ## Version 1.75-v1.0.0
 - Updates rust version to 1.75
 - Removes nextest installation step
