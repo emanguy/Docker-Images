@@ -1,5 +1,8 @@
 # RustCI
 
+## Version 1.85-v1.0.0
+- Update Rust base image to `rust:1.85`
+
 ## Version 1.75-v1.1.0
 - Adds clippy and rustfmt inside the container
 

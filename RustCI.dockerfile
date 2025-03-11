@@ -1,4 +1,4 @@
-FROM rust:1.75
+FROM rust:1.85
 
 RUN apt update && \
     apt install -y postgresql-client && \
