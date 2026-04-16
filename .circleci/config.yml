@@ -10,6 +10,7 @@ master_branch_filter: &mbf
 workflows:
   build_images:
     jobs:
+
       - docker/publish:
           name: Build RustCI Image
           filters: *mbf
@@ -21,3 +22,15 @@ workflows:
           dockerfile: ./RustCI.dockerfile
           registry: ghcr.io
           tag: $(source VERSIONS.txt && echo $RustCI_VERSION)
+
+      - docker/publish:
+          name: Build Caddy Image
+          filters: *mbf
+          context:
+            - "GitHub PAT"
+        image: "emanguy/caddy-domainnameshop"
+        docker-username: CONTAINER_REPO_USERNAME
+        docker-password: CONTAINER_REPO_PAT
+        dockerfile: ./CaddyDomainNameShop.dockerfile
+        registry: ghcr.io
+        tag: $(source VERSIONS.txt && echo $CaddyDNS_VERSION)

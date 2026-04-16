@@ -5,3 +5,4 @@ This repo contains dockerfiles for several images I use elsewhere. Versions are 
 ## Available Images
 
 * `ghcr.io/emanguy/rust-ci` - Built off the official rust image. Installs a couple cargo extensions that are useful in CI.
+* `ghcr.io/emanguy/caddy-domainnameshop` - Caddy server with the DomainNameShop ACME plugin

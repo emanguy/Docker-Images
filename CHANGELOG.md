@@ -1,3 +1,8 @@
+# Caddy-domainnameshop
+
+## Version 2.11.2
+- Initial release based on caddy:2.11.2-alpine
+
 # RustCI
 
 ## Version 1.85-v1.0.0

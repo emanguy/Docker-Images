@@ -1,3 +1,4 @@
 # This file gets sourced during CI to apply versions to the generated docker images
 
 RustCI_VERSION=1.85-v1.0.0
+CaddyDNS_VERSION=2.11.2
