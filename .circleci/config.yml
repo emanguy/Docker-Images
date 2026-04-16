@@ -20,7 +20,7 @@ workflows:
           before_build:
             - docker/pull:
                 ignore_docker_pull_error: true
-                images: "ghcr.io/emanguy/rust-ci:$(source VERSIONS.TXT && echo $RustCI_VERSION)"
+                images: "ghcr.io/emanguy/rust-ci:$(source VERSIONS.txt && echo $RustCI_VERSION)"
           docker_username: CONTAINER_REPO_USERNAME
           docker_password: CONTAINER_REPO_PAT
           dockerfile: ./RustCI.dockerfile
@@ -36,7 +36,7 @@ workflows:
           before_build:
             - docker/pull:
                 ignore_docker_pull_error: true
-                images: "ghcr.io/emanguy/caddy-domainnameshop:$(source VERSIONS.TXT && echo $CaddyDNS_VERSION)"
+                images: "ghcr.io/emanguy/caddy-domainnameshop:$(source VERSIONS.txt && echo $CaddyDNS_VERSION)"
           docker_username: CONTAINER_REPO_USERNAME
           docker_password: CONTAINER_REPO_PAT
           dockerfile: ./CaddyDomainNameShop.dockerfile
