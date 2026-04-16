@@ -28,9 +28,9 @@ workflows:
           filters: *mbf
           context:
             - "GitHub PAT"
-        image: "emanguy/caddy-domainnameshop"
-        docker-username: CONTAINER_REPO_USERNAME
-        docker-password: CONTAINER_REPO_PAT
-        dockerfile: ./CaddyDomainNameShop.dockerfile
-        registry: ghcr.io
-        tag: $(source VERSIONS.txt && echo $CaddyDNS_VERSION)
+          image: "emanguy/caddy-domainnameshop"
+          docker-username: CONTAINER_REPO_USERNAME
+          docker-password: CONTAINER_REPO_PAT
+          dockerfile: ./CaddyDomainNameShop.dockerfile
+          registry: ghcr.io
+          tag: $(source VERSIONS.txt && echo $CaddyDNS_VERSION)
