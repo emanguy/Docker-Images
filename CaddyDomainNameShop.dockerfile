@@ -3,7 +3,7 @@ FROM caddy:2.11.2-builder-alpine AS builder
 RUN --mount=type=cache,target=/go/pkg/mod \
     --mount=type=cache,target=/root/.cache/go-build \
     xcaddy build \
-    --with github.com/caddyserver/nginx-adapter
+    --with github.com/caddy-dns/domainnameshop
 
 FROM caddy:2.11.2
 
