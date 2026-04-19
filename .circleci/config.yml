@@ -55,7 +55,7 @@ workflows:
           before_build:
             - docker/pull:
                 ignore_docker_pull_error: true
-                images: "ghcr.io/emanguy/caddy-domainnameshop:$(source VERSIONS.txt && echo $CaddyDNS_VERSION)"
+                images: "ghcr.io/emanguy/caddy-domainnameshop:$(source VERSIONS.txt && echo $CaddyDNS_VERSION)-arm64"
           docker_username: CONTAINER_REPO_USERNAME
           docker_password: CONTAINER_REPO_PAT
           dockerfile: ./CaddyDomainNameShop.dockerfile
