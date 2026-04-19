@@ -42,3 +42,20 @@ workflows:
           dockerfile: ./CaddyDomainNameShop.dockerfile
           registry: ghcr.io
           tag: $(source VERSIONS.txt && echo $CaddyDNS_VERSION)
+
+      - docker/publish:
+          name: Build Caddy Image (ARM)
+          filters: *mbf
+          context:
+            - "GitHub PAT"
+          image: "emanguy/caddy-domainnameshop"
+          before_build:
+            - docker/pull:
+                ignore_docker_pull_error: true
+                images: "ghcr.io/emanguy/caddy-domainnameshop:$(source VERSIONS.txt && echo $CaddyDNS_VERSION)"
+          docker_username: CONTAINER_REPO_USERNAME
+          docker_password: CONTAINER_REPO_PAT
+          dockerfile: ./CaddyDomainNameShop.dockerfile
+          extra_build_args: --platform=linux/arm64
+          registry: ghcr.io
+          tag: $(source VERSIONS.txt && echo $CaddyDNS_VERSION)-arm64
