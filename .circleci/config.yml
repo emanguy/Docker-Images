@@ -45,6 +45,9 @@ workflows:
 
       - docker/publish:
           name: Build Caddy Image (ARM)
+          executor:
+            name: docker/machine
+            resource_class: arm.medium
           filters: *mbf
           context:
             - "GitHub PAT"
